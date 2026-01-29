@@ -1,5 +1,8 @@
 
 # Zero-RISCY PULP Architecture Toolchain
+Zero-RISCY is the name of a small, efficient RISC-V core designed by the PULP project, optimized for minimal area and power in RV32 implementations.   
+
+To build code or software for such a core, you generally need a RISC-V cross-compiler toolchain (e.g., GCC targeting riscv32-unknown-elf). The repo guides how to build exactly that with the ISA extensions used by Zero-RISCY.    
 
 **STEP-1** : Update Ubuntu (important)    
       
