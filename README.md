@@ -45,7 +45,7 @@
 
         cd pulp-riscv-gnu-toolchain
 
-STEP-5 : Configure for Zero-RISCY   b    
+**STEP-5** : Configure for Zero-RISCY      
        
         ./configure \
        --prefix=$HOME/tools/pulp-riscv \
@@ -59,15 +59,23 @@
 ***ISA*** : Instructions CPU supports.   
 ***ABI*** : How software uses CPU.   
 
-STEP-6 : Build the toolchain (long step)
-  -> make -j$(nproc)
-20–45 minutes (depends on PC). Laptop should have good cooling system (any cooling pad can be used).
-STEP-7 : Add toolchain to PATH
--> nano ~/.bashrc
--> export PATH=$HOME/tools/pulp-riscv/bin:$PATH
-CTRL + O -> Enter -> CTRL + X
-->  source ~/.bashrc
+**STEP-6** : Build the toolchain (long step)     
+        
+        make -j$(nproc)
+        
+20–45 minutes (depends on PC). Laptop should have good cooling system (any cooling pad can be used).     
 
-STEP-8 : Verify installation
--> riscv32-unknown-elf-gcc --version
+**STEP-7** : Add toolchain to PATH    
+          
+           nano ~/.bashrc   
+           export PATH=$HOME/tools/pulp-riscv/bin:$PATH  
+CTRL + O -> Enter -> CTRL + X     
+
+          source ~/.bashrc
+
+**STEP-8** : Verify installation    
+            
+            riscv32-unknown-elf-gcc --version
+
+            
 Result : -> riscv32-unknown-elf-gcc (GCC) 10.x.x
