@@ -54,9 +54,9 @@ The toolchain will fail if even one dependency is missing.
        --with-arch=rv32imc \
        --with-abi=ilp32
 
-***--prefix*** → where toolchain will be installed     
-***rv32imc*** → Zero-RISCY ISA     
-***ilp32*** → 32-bit ABI (Application Binary Interface)    
+***--prefix*** -> where toolchain will be installed     
+***rv32imc*** -> Zero-RISCY ISA     
+***ilp32*** -> 32-bit ABI (Application Binary Interface)    
 ***ABI*** decides how binary code behaves, not how source code looks.    
 ***ISA*** : Instructions CPU supports.   
 ***ABI*** : How software uses CPU.   
