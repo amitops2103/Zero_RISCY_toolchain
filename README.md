@@ -83,3 +83,62 @@ CTRL + O -> Enter -> CTRL + X
 ``Result : -> riscv32-unknown-elf-gcc (GCC) 10.x.x``
 
 ----------------------------------------------------------------------------------------------------------------------
+
+# Compile your FIRST program (Zero-RISCY)
+
+------------------------------------------------------------------------------------------------------------------------
+
+## **STEP-1** : Create a test file     
+    nano first.c
+
+## **STEP-2** : Simple Program     
+    int main() 
+    {   
+    volatile int x = 10;    
+    volatile int y = 20;  
+    volatile int z = x + y;   
+    while (1); 
+    }      
+
+## **STEP-3** : Compile for Zero-RISCY     
+    riscv32-unknown-elf-gcc \
+    -march=rv32imc \
+    -mabi=ilp32 \
+    -nostdlib \
+    -Ttext=0x0 \
+     first.c \
+    -o first.elf
+
+| Flag            | Reason               |
+|-----------------|----------------------|
+| `rv32imc`       | Zero-RISCY ISA       |
+| `ilp32`         | 32-bit ABI           |
+| `-nostdlib`     | Bare-metal           |
+| `-ffreestanding`| No OS                |
+| `-O0`           | Readable assembly    |
+
+***Bare-metal*** = **your program runs directly on the CPU hardware, with NO operating system.**
+
+## **STEP-4** : Inspect ELF     
+-> riscv32-unknown-elf-objdump -d first.elf
+Result : 00000000 <_start>:
+0: 1141        addi sp,sp,-16
+2: c606        sw   ra,12(sp)
+4: 419c        lw   a5,0(a1)
+6: 4198        lw   a4,0(a1)
+8: 00e787b3    add  a5,a5,a4
+ 
+ELF = Executable and Linkable Format
+This is the file format that quietly connects : C code  ->  compiler  ->  linker  ->  RTL  -> silicon.
+An ELF file is a container that holds:
+- your compiled machine code
+- Data
+- Addresses
+- Symbols
+- debug info
+STEP-5 : Verify memory behavior
+-> riscv32-unknown-elf-nm add.elf
+Result : 
+00000010 D a
+00000014 D b
+00000018 B c
