@@ -77,6 +77,6 @@ CTRL + O -> Enter -> CTRL + X
             riscv32-unknown-elf-gcc --version
 
             
-Result : -> riscv32-unknown-elf-gcc (GCC) 10.x.x
+``Result : -> riscv32-unknown-elf-gcc (GCC) 10.x.x``
 
 ----------------------------------------------------------------------------------------------------------------------
