@@ -1,6 +1,5 @@
-# Zero_RISCY_toolchain
--------------------------------------------------
-## Zero-RISCY PULP Architecture Toolchain
+
+# Zero-RISCY PULP Architecture Toolchain
 
 **STEP-1** : Update Ubuntu (important)    
       
@@ -79,3 +78,5 @@ CTRL + O -> Enter -> CTRL + X
 
             
 Result : -> riscv32-unknown-elf-gcc (GCC) 10.x.x
+
+----------------------------------------------------------------------------------------------------------------------
