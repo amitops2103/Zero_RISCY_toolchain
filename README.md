@@ -120,25 +120,27 @@ CTRL + O -> Enter -> CTRL + X
 ***Bare-metal*** = **your program runs directly on the CPU hardware, with NO operating system.**
 
 ## **STEP-4** : Inspect ELF     
--> riscv32-unknown-elf-objdump -d first.elf
-Result : 00000000 <_start>:
-0: 1141        addi sp,sp,-16
-2: c606        sw   ra,12(sp)
-4: 419c        lw   a5,0(a1)
-6: 4198        lw   a4,0(a1)
-8: 00e787b3    add  a5,a5,a4
+    riscv32-unknown-elf-objdump -d first.elf    
+---
+    Result : 00000000 <_start>:
+          0: 1141        addi sp,sp,-16
+          2: c606        sw   ra,12(sp)
+          4: 419c        lw   a5,0(a1)
+          6: 4198        lw   a4,0(a1)
+          8: 00e787b3    add  a5,a5,a4
  
-ELF = Executable and Linkable Format
-This is the file format that quietly connects : C code  ->  compiler  ->  linker  ->  RTL  -> silicon.
+***ELF*** = **Executable and Linkable Format**     
+This is the file format that quietly connects : C code  ->  compiler  ->  linker  ->  RTL  -> silicon.     
 An ELF file is a container that holds:
 - your compiled machine code
 - Data
 - Addresses
 - Symbols
 - debug info
-STEP-5 : Verify memory behavior
--> riscv32-unknown-elf-nm add.elf
-Result : 
-00000010 D a
-00000014 D b
-00000018 B c
+  
+## **STEP-5** : Verify memory behavior
+    riscv32-unknown-elf-nm add.elf
+----------
+    Result : 00000010 D a
+             00000014 D b
+             00000018 B c
