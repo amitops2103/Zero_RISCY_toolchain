@@ -66,6 +66,7 @@ The toolchain will fail if even one dependency is missing.
     make -j$(nproc)
         
 20–45 minutes (depends on PC). Laptop should have good cooling system (any cooling pad can be used). 
+-----------------------------------------------------
 ### Optional : If it shows Error 127
 1. Check if submodule directory exists                 
 
@@ -87,6 +88,22 @@ The toolchain will fail if even one dependency is missing.
 It will show like this : 
 <img width="1109" height="235" alt="image" src="https://github.com/user-attachments/assets/63b61cdd-3693-4e20-a3e9-485c35a69883" />
 
+7. Clean previous failed build (mandatory)
+
+       rm -rf build-* stamps
+
+8. Re-configure (fresh)
+
+       ./configure \
+       --prefix=$HOME/tools/pulp-riscv \
+       --with-arch=rv32imc \
+       --with-abi=ilp32
+
+
+9. Build again
+
+       make -j$(nproc)
+-------------------------------------------------------------
 ## **STEP-7** : Add toolchain to PATH    
           
     nano ~/.bashrc   
