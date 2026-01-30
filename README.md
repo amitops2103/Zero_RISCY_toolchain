@@ -79,11 +79,12 @@ CTRL + O -> Enter -> CTRL + X
             
             riscv32-unknown-elf-gcc --version
 
+It will show as :
             
-``Result :riscv32-unknown-elf-gcc (GCC) 7.1.1 20170509
-          Copyright (C) 2017 Free Software Foundation, Inc.
-          This is free software; see the source for copying conditions.  There is NO
-          warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.``
+    riscv32-unknown-elf-gcc (GCC) 7.1.1 20170509
+    Copyright (C) 2017 Free Software Foundation, Inc.
+    This is free software; see the source for copying conditions.  There is NO
+    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ----------------------------------------------------------------------------------------------------------------------
 
