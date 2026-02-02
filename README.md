@@ -130,13 +130,13 @@ It will show as :
 
 ------------------------------------------------------------------------------------------------------------------------
 ## The file structure should be like this
-RISC_V/
-├── pulp-riscv-gnu-toolchain/   ← toolchain (DON’T touch)
-├── testing/                    ← YOUR programs
-    ├── src/
-    ├── build/
-    ├── linker/
-    └── scripts/
+    RISC_V/      
+       ├── pulp-riscv-gnu-toolchain/   ← toolchain (DON’T touch)      
+       ├── testing/                    ← YOUR programs    
+            ├── src/      
+            ├── build/     
+            ├── linker/    
+            └── scripts/     
 
 ## **STEP-1** : Create a test file     
     nano add.c
@@ -156,8 +156,8 @@ RISC_V/
     -mabi=ilp32 \
     -nostdlib \
     -Ttext=0x0 \
-     first.c \
-    -o first.elf
+     add.c \
+    -o add.elf
 
 | Flag            | Reason               |
 |-----------------|----------------------|
@@ -171,14 +171,13 @@ RISC_V/
 
 ## **STEP-4** : Inspect ELF     
     riscv32-unknown-elf-objdump -d first.elf    
----
-    Result : 00000000 <_start>:
-          0: 1141        addi sp,sp,-16
-          2: c606        sw   ra,12(sp)
-          4: 419c        lw   a5,0(a1)
-          6: 4198        lw   a4,0(a1)
-          8: 00e787b3    add  a5,a5,a4
- 
+Results :  Assembly language  
+<img width="926" height="308" alt="image" src="https://github.com/user-attachments/assets/dab874d9-755d-4757-bfe4-70b0674f7efc" />
+
+    riscv32-unknown-elf-nm build/add.elf
+Results : Address
+<img width="922" height="195" alt="image" src="https://github.com/user-attachments/assets/f928672b-c4e1-4005-b16c-711ef638d3da" />
+
 ***ELF*** = **Executable and Linkable Format**     
 This is the file format that quietly connects : C code  ->  compiler  ->  linker  ->  RTL  -> silicon.     
 An ELF file is a container that holds:
@@ -188,9 +187,4 @@ An ELF file is a container that holds:
 - Symbols
 - debug info
   
-## **STEP-5** : Verify memory behavior
-    riscv32-unknown-elf-nm add.elf
-----------
-    Result : 00000010 D a
-             00000014 D b
-             00000018 B c
+
