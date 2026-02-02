@@ -187,4 +187,19 @@ An ELF file is a container that holds:
 - Symbols
 - debug info
   
+## Verifying Zero Riscy implemantation
+1. create a file
+
+       nano fpu.c
+write the code for floating point 
+
+      void test_fpu() 
+      {
+           asm volatile ("fadd.s f0, f0, f0");
+      }
+
+Zero riscy doesn't support floating point implementation.   
+It will shows error as :
+<img width="819" height="227" alt="image" src="https://github.com/user-attachments/assets/9fdb24e7-6bf2-496f-85db-62bbd217e4bc" />
+
 
