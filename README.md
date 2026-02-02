@@ -150,14 +150,18 @@ It will show as :
     while (1); 
     }      
 
-## **STEP-3** : Compile for Zero-RISCY     
+## **STEP-3** : create build directory for .elf file
+
+    mkdir -p build
+    
+## **STEP-4** : Compile for Zero-RISCY     
     riscv32-unknown-elf-gcc \
     -march=rv32imc \
     -mabi=ilp32 \
     -nostdlib \
-    -Ttext=0x0 \
+    -T linker.ld \
      add.c \
-    -o add.elf
+    -o build/add.elf
 
 | Flag            | Reason               |
 |-----------------|----------------------|
@@ -169,7 +173,7 @@ It will show as :
 
 ***Bare-metal*** = **your program runs directly on the CPU hardware, with NO operating system.**
 
-## **STEP-4** : Inspect ELF     
+## **STEP-5** : Inspect ELF     
     riscv32-unknown-elf-objdump -d first.elf    
 Results :  Assembly language  
 <img width="926" height="308" alt="image" src="https://github.com/user-attachments/assets/dab874d9-755d-4757-bfe4-70b0674f7efc" />
@@ -191,6 +195,7 @@ An ELF file is a container that holds:
 1. create a file
 
        nano fpu.c
+   
 write the code for floating point 
 
       void test_fpu() 
