@@ -174,7 +174,7 @@ It will show as :
 ***Bare-metal*** = **your program runs directly on the CPU hardware, with NO operating system.**
 
 ## **STEP-5** : Inspect ELF     
-    riscv32-unknown-elf-objdump -d first.elf    
+    riscv32-unknown-elf-objdump -d build/add.elf    
 Results :  Assembly language  
 <img width="926" height="308" alt="image" src="https://github.com/user-attachments/assets/dab874d9-755d-4757-bfe4-70b0674f7efc" />
 
