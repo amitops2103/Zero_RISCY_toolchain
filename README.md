@@ -198,7 +198,7 @@ write the code for floating point
       }
 
 Zero riscy doesn't support floating point implementation.   
-It will shows error as :
+It will shows error as :                                    
 <img width="819" height="227" alt="image" src="https://github.com/user-attachments/assets/9fdb24e7-6bf2-496f-85db-62bbd217e4bc" />  
 
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -206,7 +206,7 @@ It will shows error as :
 # Setup PULPino
 
 -----------------------------------------------------------------------------------------------------------------------------------
-
+**REFER** :- [PULPino][https://github.com/pulp-platform/pulpino]
 ### 1. Update WSl
 Open PowerShell
 
@@ -216,4 +216,16 @@ Open PowerShell
 It should be :      
 <img width="876" height="259" alt="image" src="https://github.com/user-attachments/assets/d57b71fa-6c7d-4ded-a54a-3920d6d9c268" />
 
+### 2. Install & Compile Python2
+Open Ubuntu 
 
+**Install build dependencies**
+
+    sudo apt update
+    sudo apt install build-essential zlib1g-dev libssl-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev curl llvm \
+    libncurses5-dev libncursesw5-dev xz-utils tk-dev \
+    libffi-dev liblzma-dev
+
+**Download Python 2.7.18**
+The PULpino setup requires python2 >= 2.6
