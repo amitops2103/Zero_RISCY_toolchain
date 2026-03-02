@@ -212,6 +212,7 @@ Open PowerShell
 
     wsl --update
     wsl --version
+Restart the PC
 
 It should be :      
 <img width="876" height="259" alt="image" src="https://github.com/user-attachments/assets/d57b71fa-6c7d-4ded-a54a-3920d6d9c268" />
@@ -244,12 +245,13 @@ Verify the installation :
 <img width="725" height="65" alt="image" src="https://github.com/user-attachments/assets/904144ff-1964-4811-b795-fe0cef9279a9" /> 
 
 ### 3. Python Virtual Enviroment Setup
+
 Install pip for Python2
 
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
     ~/python2.7.18/bin/python2.7 get-pip.py
      
-IF it shows error:    
+If it shows error:    
 `ERROR: Could not find a version that satisfies the requirement wheel (from versions: none)`        
 `ERROR: No matching distribution found for wheel`
 
@@ -260,3 +262,19 @@ verify
     ~/python2.7.18/bin/python2.7 -m pip --version
 
 <img width="1352" height="487" alt="image" src="https://github.com/user-attachments/assets/2ee71041-758c-44e5-a855-329a53f3bc2c" />
+
+Install virtual enviroment using Python2
+
+    ~/python2.7.18/bin/python2.7 -m pip install virtualenv
+
+Create virtual environment
+
+    ~/python2.7.18/bin/python2.7 -m virtualenv venv_pulp
+
+Activate it
+
+    source ~/venv_pulp/bin/activate
+
+For Deactivating the virtual enviroment
+
+    deactivate
