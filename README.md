@@ -206,7 +206,7 @@ It will shows error as :
 # Setup PULPino
 
 -----------------------------------------------------------------------------------------------------------------------------------
-**REFER** :- [PULPino][https://github.com/pulp-platform/pulpino]
+**REFER** :- [PULPino](https://github.com/pulp-platform/pulpino)
 ### 1. Update WSl
 Open PowerShell
 
