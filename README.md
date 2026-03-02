@@ -128,17 +128,10 @@ It will show as :
 
 # Compile your FIRST program (Zero-RISCY)
 
-------------------------------------------------------------------------------------------------------------------------
-## The file structure should be like this
-    RISC_V/      
-       ├── pulp-riscv-gnu-toolchain/   ← toolchain (DON’T touch)      
-       ├── testing/                    ← YOUR programs    
-            ├── src/      
-            ├── build/     
-            ├── linker/    
-            └── scripts/     
-
+------------------------------------------------------------------------------------------------------------------------   
 ## **STEP-1** : Create a test file     
+    mkdir tests     
+    cd tests    
     nano add.c
 
 ## **STEP-2** : Simple Program     
