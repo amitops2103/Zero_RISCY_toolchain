@@ -1,7 +1,7 @@
 
 # Zero-RISCY PULP Architecture Toolchain
-Zero-RISCY is the name of a small, efficient RISC-V core designed by the PULP project, optimized for minimal area and power in RV32 implementations.   
-
+Zero-RISCY is the name of a small, efficient RISC-V core designed by the PULP project, optimized for minimal area and power in RV32 implementations.       
+**REFER** :- [Toolchain](https://github.com/pulp-platform/pulp-riscv-gnu-toolchain)
 
 -------------------------------------------------
 ### **STEP-1** : Update Ubuntu (important)    
@@ -241,6 +241,22 @@ Verify the installation :
 
     ~/python2.7.18/bin/python2.7 --version
 
-<img width="725" height="65" alt="image" src="https://github.com/user-attachments/assets/904144ff-1964-4811-b795-fe0cef9279a9" />
+<img width="725" height="65" alt="image" src="https://github.com/user-attachments/assets/904144ff-1964-4811-b795-fe0cef9279a9" /> 
 
+### 3. Python Virtual Enviroment Setup
+Install pip for Python2
 
+    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+    ~/python2.7.18/bin/python2.7 get-pip.py
+     
+IF it shows error:    
+`ERROR: Could not find a version that satisfies the requirement wheel (from versions: none)   
+ERROR: No matching distribution found for wheel`
+
+    ~/python2.7.18/bin/python2.7 ~/Python-2.7.18/get-pip.py "pip<21.0" "setuptools<45" --no-cache-dir  
+
+verify 
+
+    ~/python2.7.18/bin/python2.7 -m pip --version
+
+<img width="1352" height="487" alt="image" src="https://github.com/user-attachments/assets/2ee71041-758c-44e5-a855-329a53f3bc2c" />
