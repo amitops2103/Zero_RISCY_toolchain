@@ -4,12 +4,12 @@ Zero-RISCY is the name of a small, efficient RISC-V core designed by the PULP pr
 
 To build code or software for such a core, you generally need a RISC-V cross-compiler toolchain (e.g., GCC targeting riscv32-unknown-elf). The repo guides how to build exactly that with the ISA extensions used by Zero-RISCY.    
 
-## **STEP-1** : Update Ubuntu (important)    
+### **STEP-1** : Update Ubuntu (important)    
       
     sudo apt update && sudo apt upgrade -y 
       
 
-## **STEP-2** : Install required dependencies (VERY IMPORTANT)     
+### **STEP-2** : Install required dependencies (VERY IMPORTANT)     
 The toolchain will fail if even one dependency is missing.   
           
     sudo apt install -y \
