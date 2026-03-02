@@ -39,7 +39,8 @@ The toolchain will fail if even one dependency is missing.
 
 ## **STEP-3** : Create a workspace directory    
         
-    /home/amitvlsi01/RISC_V
+    mkdir RISC_V      
+    cd RISC_V
 
 ## **STEP-4** : Clone PULP RISC-V GNU toolchain  
             
