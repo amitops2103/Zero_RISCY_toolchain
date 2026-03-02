@@ -250,8 +250,8 @@ Install pip for Python2
     ~/python2.7.18/bin/python2.7 get-pip.py
      
 IF it shows error:    
-`ERROR: Could not find a version that satisfies the requirement wheel (from versions: none)   
-ERROR: No matching distribution found for wheel`
+`ERROR: Could not find a version that satisfies the requirement wheel (from versions: none)`        
+`ERROR: No matching distribution found for wheel`
 
     ~/python2.7.18/bin/python2.7 ~/Python-2.7.18/get-pip.py "pip<21.0" "setuptools<45" --no-cache-dir  
 
