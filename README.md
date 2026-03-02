@@ -199,6 +199,13 @@ write the code for floating point
 
 Zero riscy doesn't support floating point implementation.   
 It will shows error as :
-<img width="819" height="227" alt="image" src="https://github.com/user-attachments/assets/9fdb24e7-6bf2-496f-85db-62bbd217e4bc" />
+<img width="819" height="227" alt="image" src="https://github.com/user-attachments/assets/9fdb24e7-6bf2-496f-85db-62bbd217e4bc" />  
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+# Setup PULPino
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+## 1. Compile Python2
 
