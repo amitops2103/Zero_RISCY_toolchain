@@ -207,5 +207,13 @@ It will shows error as :
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-### 1. Compile Python2
+### 1. Update WSl
+Open PowerShell
+
+    wsl --update
+    wsl --version
+
+It should be :      
+<img width="876" height="259" alt="image" src="https://github.com/user-attachments/assets/d57b71fa-6c7d-4ded-a54a-3920d6d9c268" />
+
 
