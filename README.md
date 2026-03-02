@@ -227,5 +227,20 @@ Open Ubuntu
     libncurses5-dev libncursesw5-dev xz-utils tk-dev \
     libffi-dev liblzma-dev
 
-**Download Python 2.7.18**
-The PULpino setup requires python2 >= 2.6
+**Download Python 2.7.18**          
+The PULpino setup requires python2 >= 2.6        
+
+    wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz    
+    tar -xvf Python-2.7.18.tgz   
+    cd Python-2.7.18    
+    ./configure --prefix=$HOME/python2 --enable-optimizations   
+    make -j$(nproc)      
+    make install
+
+Verify the installation :
+
+    ~/python2.7.18/bin/python2.7 --version
+
+<img width="725" height="65" alt="image" src="https://github.com/user-attachments/assets/904144ff-1964-4811-b795-fe0cef9279a9" />
+
+
