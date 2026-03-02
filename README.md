@@ -3,7 +3,7 @@
 Zero-RISCY is the name of a small, efficient RISC-V core designed by the PULP project, optimized for minimal area and power in RV32 implementations.   
 
 To build code or software for such a core, you generally need a RISC-V cross-compiler toolchain (e.g., GCC targeting riscv32-unknown-elf). The repo guides how to build exactly that with the ISA extensions used by Zero-RISCY.    
-
+-------------------------------------------------
 ### **STEP-1** : Update Ubuntu (important)    
       
     sudo apt update && sudo apt upgrade -y 
@@ -37,18 +37,18 @@ The toolchain will fail if even one dependency is missing.
     git \
     cmake
 
-## **STEP-3** : Create a workspace directory    
+### **STEP-3** : Create a workspace directory    
         
     mkdir RISC_V      
     cd RISC_V
 
-## **STEP-4** : Clone PULP RISC-V GNU toolchain  
+### **STEP-4** : Clone PULP RISC-V GNU toolchain  
             
     git clone https://github.com/pulp-platform/pulp-riscv-gnu-toolchain.git  
 
     cd pulp-riscv-gnu-toolchain
 
-## **STEP-5** : Configure for Zero-RISCY      
+### **STEP-5** : Configure for Zero-RISCY      
        
     ./configure \
     --prefix=$HOME/tools/pulp-riscv \
@@ -62,13 +62,13 @@ The toolchain will fail if even one dependency is missing.
 ***ISA*** : Instructions CPU supports.   
 ***ABI*** : How software uses CPU.   
 
-## **STEP-6** : Build the toolchain (long step)     
+### **STEP-6** : Build the toolchain (long step)     
         
     make -j$(nproc)
         
   
 -----------------------------------------------------
-### Optional : If it shows Error 127
+## Optional : If it shows Error 127
 1. Check if submodule directory exists                 
 
        ls riscv-binutils-gdb
@@ -105,7 +105,7 @@ It will show like this :
 
        make -j$(nproc)
 -------------------------------------------------------------
-## **STEP-7** : Add toolchain to PATH    
+### **STEP-7** : Add toolchain to PATH    
           
     nano ~/.bashrc   
     export PATH=$HOME/tools/pulp-riscv/bin:$PATH  
@@ -114,7 +114,7 @@ CTRL + O -> Enter -> CTRL + X
 
     source ~/.bashrc
 
-## **STEP-8** : Verify installation    
+### **STEP-8** : Verify installation    
             
     riscv32-unknown-elf-gcc --version
 
@@ -130,12 +130,12 @@ It will show as :
 # Compile your FIRST program (Zero-RISCY)
 
 ------------------------------------------------------------------------------------------------------------------------   
-## **STEP-1** : Create a test file     
+### **STEP-1** : Create a test file     
     mkdir tests     
     cd tests    
     nano add.c
 
-## **STEP-2** : Simple Program     
+### **STEP-2** : Simple Program     
     int main() 
     {   
     volatile int x = 10;    
@@ -144,11 +144,11 @@ It will show as :
     while (1); 
     }      
 
-## **STEP-3** : create build directory for .elf file
+### **STEP-3** : create build directory for .elf file
 
     mkdir -p build
     
-## **STEP-4** : Compile for Zero-RISCY     
+### **STEP-4** : Compile for Zero-RISCY     
     riscv32-unknown-elf-gcc \
     -march=rv32imc \
     -mabi=ilp32 \
@@ -167,7 +167,7 @@ It will show as :
 
 ***Bare-metal*** = **your program runs directly on the CPU hardware, with NO operating system.**
 
-## **STEP-5** : Inspect ELF     
+### **STEP-5** : Inspect ELF     
     riscv32-unknown-elf-objdump -d build/add.elf    
 Results :  Assembly language  
 <img width="926" height="308" alt="image" src="https://github.com/user-attachments/assets/dab874d9-755d-4757-bfe4-70b0674f7efc" />
@@ -185,7 +185,7 @@ An ELF file is a container that holds:
 - Symbols
 - debug info
   
-## Verifying Zero Riscy implemantation
+### Verifying Zero Riscy implemantation
 1. create a file
 
        nano fpu.c
@@ -207,5 +207,5 @@ It will shows error as :
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-## 1. Compile Python2
+### 1. Compile Python2
 
