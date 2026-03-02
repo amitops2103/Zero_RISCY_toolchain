@@ -65,7 +65,7 @@ The toolchain will fail if even one dependency is missing.
         
     make -j$(nproc)
         
-20–45 minutes (depends on PC). Laptop should have good cooling system (any cooling pad can be used). 
+  
 -----------------------------------------------------
 ### Optional : If it shows Error 127
 1. Check if submodule directory exists                 
