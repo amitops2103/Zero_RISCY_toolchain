@@ -312,6 +312,17 @@ Go to : https://www.altera.com/downloads/simulation-tools/modelsim-fpgas-standar
 
       ./ModelSimSetup-20.1.1.720-linux.run
 
+<img width="692" height="542" alt="image" src="https://github.com/user-attachments/assets/4a734dfa-9d7b-465f-8739-2ad86c0c0afe" />
+    
+choose free license version then next      
+<img width="692" height="544" alt="image" src="https://github.com/user-attachments/assets/cb0012f0-a553-4154-b50e-25ef01eaeb5b" />
+
+accept the agreement then next     
+<img width="690" height="543" alt="image" src="https://github.com/user-attachments/assets/6c6e26c7-a0be-48c1-ad28-af826cd80897" />
+
+<img width="693" height="545" alt="image" src="https://github.com/user-attachments/assets/0661c13f-bbe9-4728-b235-4550cd94670a" />
+
+
 - Add ModelSim PATH to ~/.bashrc
 
       echo 'export PATH=$PATH:/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin' >> ~/.bashrc
