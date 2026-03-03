@@ -352,4 +352,9 @@ accept the agreement then next
 <img width="1011" height="721" alt="image" src="https://github.com/user-attachments/assets/dfa095dd-87c1-43ae-bc46-8b7ad7bad6e7" />
 
 
-  
+- verify with verilog simulation
+In the model_sim directory create and.v file
+
+      nano and.v
+
+    
