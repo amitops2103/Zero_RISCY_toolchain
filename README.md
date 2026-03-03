@@ -212,11 +212,12 @@ Open PowerShell
 
     wsl --update
     wsl --version
-Restart the PC
+
 
 It should be :      
 <img width="876" height="259" alt="image" src="https://github.com/user-attachments/assets/d57b71fa-6c7d-4ded-a54a-3920d6d9c268" />
 
+Restart the PC
 ### 2. Install & Compile Python2
 Open Ubuntu 
 
