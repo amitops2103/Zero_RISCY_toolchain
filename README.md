@@ -327,3 +327,10 @@ Go to : https://www.altera.com/downloads/simulation-tools/modelsim-fpgas-standar
        export PATH=/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin:/home/amitvlsi01/tools/pulp-riscv/bin:$PATH
 
        source bashrc_pulpino.txt
+  
+- verify the installation
+
+       which vsim
+  
+<img width="1365" height="73" alt="image" src="https://github.com/user-attachments/assets/eb8c3b6c-7ad6-4af8-bfcd-3a43dc92fee0" />
+  
