@@ -316,3 +316,14 @@ Go to : https://www.altera.com/downloads/simulation-tools/modelsim-fpgas-standar
 
       echo 'export PATH=$PATH:/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin' >> ~/.bashrc
       source ~/.bashrc
+  
+- Now create a directory to keep the ModelSim files
+
+      mkdir model_sim
+
+- Now create a **bashrc_pulpino.txt** file in  RISC_V directory and model_sim directory for the ModelSim path (**VERY IMPORTANT**)
+
+       nano bashrc_pulpino.txt
+       export PATH=/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin:/home/amitvlsi01/tools/pulp-riscv/bin:$PATH
+
+       source bashrc_pulpino.txt
