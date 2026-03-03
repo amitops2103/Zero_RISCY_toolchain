@@ -279,3 +279,40 @@ Activate it
 For Deactivating the virtual enviroment
 
     deactivate
+    
+**Now all the setup will be done in virtual enviroment**
+
+### 4. Modelsim Setup
+
+Go to : https://www.altera.com/downloads/simulation-tools/modelsim-fpgas-standard-edition-software-version-20-1-1
+
+- download for linux (size ~1.4GB version - 20.1.1)   
+
+- from WSl goto  [C:\Users\Admin\Downloads] copy the **ModelSimSetup-20.1.1.720-linux.run** file to the home directory
+
+      cd /mnt/c/Users/Admin/Downloads 
+      cp -r /mnt/c/Users/Admin/Downloads/ModelSimSetup-20.1.1.720-linux.run ~/amitvlsi01
+
+- make setup file executable
+
+      chmod +x ModelSimSetup-20.1.1.720-linux.run
+
+- Installing Required 32-bit Dependencies. ModelSim 20.1 is a 32-bit application, so you must first enable i386 architecture before installing those libraries.
+
+      sudo dpkg --add-architecture i386
+      sudo apt update
+
+- This tells Ubuntu to allow installation of 32-bit packages.
+
+      sudo apt install libncurses6:i386
+      sudo apt install libc6:i386 libstdc++6:i386 \
+      libxext6:i386 libxft2:i386 libxrender1:i386
+ 
+- Finally Run  
+
+      ./ModelSimSetup-20.1.1.720-linux.run
+
+- Add ModelSim PATH to ~/.bashrc
+
+      echo 'export PATH=$PATH:/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin' >> ~/.bashrc
+      source ~/.bashrc
