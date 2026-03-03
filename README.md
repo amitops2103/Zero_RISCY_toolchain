@@ -344,4 +344,12 @@ accept the agreement then next
        which vsim
   
 <img width="1365" height="73" alt="image" src="https://github.com/user-attachments/assets/eb8c3b6c-7ad6-4af8-bfcd-3a43dc92fee0" />
+
+- launch ModelSim
+
+      vsim
+
+<img width="1011" height="721" alt="image" src="https://github.com/user-attachments/assets/dfa095dd-87c1-43ae-bc46-8b7ad7bad6e7" />
+
+
   
