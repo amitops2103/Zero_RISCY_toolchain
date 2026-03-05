@@ -352,11 +352,11 @@ accept the agreement then next
 <img width="1011" height="721" alt="image" src="https://github.com/user-attachments/assets/dfa095dd-87c1-43ae-bc46-8b7ad7bad6e7" />
 
 
-- verify with verilog simulation
+- verify with verilog simulation    
   In the model_sim directory create and.v file
 
       nano and.v
-  
+
   write a small verilog program
 
       module and_gate (
@@ -370,7 +370,7 @@ accept the agreement then next
       
 write a testbench 
 
-    nano tb.v
+      nano tb.v
 
     
     `timescale 1ns/1ps
@@ -398,19 +398,37 @@ write a testbench
     end
     endmodule
 
-  compile the design and testbench 
+- compile the design and testbench 
 
-    vlog and.v tb.v
-    vsim tb.v
+      vlog and.v tb.v
+      vsim tb.v
 
 <img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/f3a8e7db-cc04-4c50-a65b-6627562d7bff" />
 
-now in the ModelSim transcript window type 
+- now in the ModelSim transcript window type 
 
-     add wave *
-     run 50ns
+      add wave *
+      run 50ns
 
 <img width="1365" height="719" alt="image" src="https://github.com/user-attachments/assets/2c84e54d-fbfc-49ca-9bc1-d2b57d32fe92" />
 
+### 5. PULPino integration
 
+- Clone the PULPino repository & get the submodules
 
+      cd 
+      git clone https://github.com/pulp-platform/pulpino.git
+      cd pulpino
+      git submodule update --init –recursive
+      export PULP_CORE=zeroriscy
+
+- Install .yml
+
+      python2 -m pip install pyyaml
+      sudo apt install python-pip
+      pip2 install pyyaml
+
+- Run update-ips script
+
+       ./update-ips.py
+       
