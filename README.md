@@ -353,7 +353,7 @@ accept the agreement then next
 
 
 - verify with verilog simulation
-In the model_sim directory create and.v file
+  In the model_sim directory create and.v file
 
       nano and.v
   
@@ -375,12 +375,12 @@ write a testbench
     
     `timescale 1ns/1ps
 
-    module tb_and_gate;
+    module tb;
     // Testbench signals
     reg  a;
     reg  b;
     wire y;
-    // Instantiate DUT (Device Under Test)
+    // Instantiate DUT (Design Under Test)
     and_gate uut (.a(a), .b(b), .y(y) );
     // Test sequence
     initial begin
@@ -397,3 +397,20 @@ write a testbench
         $finish;
     end
     endmodule
+
+  compile the design and testbench 
+
+    vlog and.v tb.v
+    vsim tb.v
+
+<img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/f3a8e7db-cc04-4c50-a65b-6627562d7bff" />
+
+now in the ModelSim transcript window type 
+
+     add wave *
+     run 50ns
+
+<img width="1365" height="719" alt="image" src="https://github.com/user-attachments/assets/2c84e54d-fbfc-49ca-9bc1-d2b57d32fe92" />
+
+
+
