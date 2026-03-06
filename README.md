@@ -312,10 +312,11 @@ Go to : https://www.altera.com/downloads/simulation-tools/modelsim-fpgas-standar
 
       ./ModelSimSetup-20.1.1.720-linux.run
 
-<img width="692" height="542" alt="image" src="https://github.com/user-attachments/assets/4a734dfa-9d7b-465f-8739-2ad86c0c0afe" />
+<img width="689" height="542" alt="image" src="https://github.com/user-attachments/assets/5ae66e0e-0fe5-4144-81cd-f01cdc4beff2" />
     
 choose free license version then next      
-<img width="692" height="544" alt="image" src="https://github.com/user-attachments/assets/cb0012f0-a553-4154-b50e-25ef01eaeb5b" />
+<img width="693" height="544" alt="image" src="https://github.com/user-attachments/assets/b36821d7-8c59-4ce9-b147-06a654f51cc8" />
+
 
 accept the agreement then next     
 <img width="690" height="543" alt="image" src="https://github.com/user-attachments/assets/6c6e26c7-a0be-48c1-ad28-af826cd80897" />
