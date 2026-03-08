@@ -420,16 +420,35 @@ write a testbench
       cd 
       git clone https://github.com/pulp-platform/pulpino.git
       cd pulpino
-      git submodule update --init –recursive
+      git submodule update --init -recursive
       export PULP_CORE=zeroriscy
 
 - Install .yml
 
-      python2 -m pip install pyyaml
+      python2 -m pip install "pyyaml==5.3.1"
       sudo apt install python-pip
       pip2 install pyyaml
 
 - Run update-ips script
 
        ./update-ips.py
-       
+
+- If it throws error : **Updating ip 'adv_dbg_if'... error: pathspec 'pulpinov1' did not match any file(s) known to git ERROR: could not checkout ip 'adv_dbg_if' at pulpinov1.**              
+It means : The repo : adv_dbg_if               
+does NOT have a branch or tag named pulpinov1.         
+So update-ips.py keeps failing.
+ 
+        cd ~/pulpino/ips/adv_dbg_if
+        git checkout -b pulpinov1 master
+        cd ~/pulpino
+        ./update-ips.py
+
+- If it throws error :                           
+ <img width="448" height="303" alt="image" src="https://github.com/user-attachments/assets/d8b94716-3e9a-4ab5-bfe2-f19738105961" />       
+It means  : The branch pulpinov1 exists locally, but it is not tracking any remote branch.              
+So when update-ips.py runs git pull, Git doesn’t know what to pull from.
+
+      cd ~/pulpino/ips/adv_dbg_if
+      git branch --set-upstream-to=origin/master pulpinov1
+      cd ~/pulpino
+      ./update-ips.py
