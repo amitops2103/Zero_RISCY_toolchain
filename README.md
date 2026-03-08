@@ -431,17 +431,17 @@ write a testbench
 
 - Run update-ips script
 
-       ./update-ips.py
+      ./update-ips.py
 
 - If it throws error : **Updating ip 'adv_dbg_if'... error: pathspec 'pulpinov1' did not match any file(s) known to git ERROR: could not checkout ip 'adv_dbg_if' at pulpinov1.**              
 It means : The repo : adv_dbg_if               
 does NOT have a branch or tag named pulpinov1.         
 So update-ips.py keeps failing.
  
-        cd ~/pulpino/ips/adv_dbg_if
-        git checkout -b pulpinov1 master
-        cd ~/pulpino
-        ./update-ips.py
+      cd ~/pulpino/ips/adv_dbg_if
+      git checkout -b pulpinov1 master
+      cd ~/pulpino
+      ./update-ips.py
 
 - If it throws error :                           
  <img width="448" height="303" alt="image" src="https://github.com/user-attachments/assets/d8b94716-3e9a-4ab5-bfe2-f19738105961" />
@@ -449,7 +449,61 @@ So update-ips.py keeps failing.
 It means  : The branch pulpinov1 exists locally, but it is not tracking any remote branch.              
 So when update-ips.py runs git pull, Git doesn’t know what to pull from.
 
-      cd ~/pulpino/ips/adv_dbg_if
-      git branch --set-upstream-to=origin/master pulpinov1
-      cd ~/pulpino
-      ./update-ips.py
+    cd ~/pulpino/ips/adv_dbg_if
+    git branch --set-upstream-to=origin/master pulpinov1
+    cd ~/pulpino
+    ./update-ips.py
+    
+### 6. CMake (3.5.1) Installation
+
+    sudo apt install build-essential libssl-dev
+    wget https://github.com/Kitware/CMake/releases/download/v3.5.1/cmake-3.5.1.tar.gz
+    tar -xvf cmake-3.5.1.tar.gz
+    cd cmake-3.5.1
+    ./bootstrap --prefix=$HOME/cmake-351
+    make -j$(nproc)
+    make install
+
+verify : 
+
+    $HOME/cmake-351/bin/cmake --version
+
+<img width="723" height="109" alt="image" src="https://github.com/user-attachments/assets/70ef48c7-e05b-4c68-8629-0ec387e9e682" />
+
+### 7. Configure Zero-Riscy script
+
+    cd/pulpino/sw
+    vim cmake_configure.zeroriscy.gcc.sh
+
+- Change :
+line 13 : remove -m32 (it should be TARGET_C_FLAGS="-O3 -g")
+line 31 : GCC_MARCH="rv32im"
+line 40 : $HOME/cmake-351/bin/cmake "$PULP_GIT_DIRECTORY"/sw/ \
+
+- Create a build directory
+
+      cd sw
+      mkdir build
+      cd build
+
+- Add bashrc_pulpino.txt inside build
+
+      nano bashrc_pulpino.txt
+      export PATH=/home/amitvlsi01/intelFPGA/20.1/modelsim_ase/bin:/home/amitvlsi01/tools/pulp-riscv/bin:$PATH
+
+
+      source bashrc_pulpino.txt
+
+- Run cmake_configure.zeroriscy.gcc.sh script
+
+      cp /home/amitvlsi01/pulpino/sw/cmake_configure.zeroriscy.gcc.sh /home/amitvlsi01/pulpino/sw/build
+      chmod +x cmake_configure.zeroriscy.gcc.sh
+      ./cmake_configure.zeroriscy.gcc.sh
+
+It will show this :    
+
+<img width="973" height="222" alt="image" src="https://github.com/user-attachments/assets/2516fd98-8492-4155-855a-25d338ac1418" />
+
+- If there is a error like riscv.ld is not found then :
+
+     
