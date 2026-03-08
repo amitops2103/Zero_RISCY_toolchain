@@ -444,7 +444,8 @@ So update-ips.py keeps failing.
         ./update-ips.py
 
 - If it throws error :                           
- <img width="448" height="303" alt="image" src="https://github.com/user-attachments/assets/d8b94716-3e9a-4ab5-bfe2-f19738105961" />       
+ <img width="448" height="303" alt="image" src="https://github.com/user-attachments/assets/d8b94716-3e9a-4ab5-bfe2-f19738105961" />
+   
 It means  : The branch pulpinov1 exists locally, but it is not tracking any remote branch.              
 So when update-ips.py runs git pull, Git doesn’t know what to pull from.
 
