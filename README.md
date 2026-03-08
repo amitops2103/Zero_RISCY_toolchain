@@ -505,5 +505,14 @@ It will show this :
 <img width="973" height="222" alt="image" src="https://github.com/user-attachments/assets/2516fd98-8492-4155-855a-25d338ac1418" />
 
 - If there is a error like riscv.ld is not found then :
+manually copy the riscv.ld file from pulp-riscv-gnu-toolchain directory to pulpino->sw->build->CMakeFiles->CMakeTmp
+then inside build directory type :
+
+      riscv32-unknown-elf-ld –verbose | head -n -1 | tail -n +7 | sed ‘168 a\\_fbss = .;’ | sed ‘169 a \\ . = .;’ > /home/dev65/pulpino/build/CMakeFiles/CMakeTmp/riscv.ld
+  
+- NOTE : It might get automatically deleted from the destination folder but you have to copy the folder again and again run the above command make sure that you have open the folders in the background like this :
+
+  <img width="1918" height="267" alt="Screenshot 2026-03-08 193722" src="https://github.com/user-attachments/assets/ca1e8253-147e-4f3e-964c-e7d13006a9f5" />
+
 
      
