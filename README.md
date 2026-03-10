@@ -514,5 +514,32 @@ then inside build directory type :
 
   <img width="1918" height="267" alt="Screenshot 2026-03-08 193722" src="https://github.com/user-attachments/assets/ca1e8253-147e-4f3e-964c-e7d13006a9f5" />
 
+- Inside build : 
 
+      sudo ln -s /home/dev65/intelFPGA/20.1/modelsim_ase/linuxaloem linux_x86_64pe
+
+- Vcompile setup :
+
+      sudo apt-get install tcsh
+      sudo apt-get install csh
+      sudo apt-get install gcc-multilib
+      make vcompile
+      make helloworld
      
+- here u will get error related to -m32
+
+      find . -type f -exec sed -I ‘s/-m32//g’ {} +
+
+also inside sw directory : vim CMakeLists.txt remove -m32 from line 54
+
+- now from build directory :
+
+      make helloworld.vsim
+
+- inside modelsim transcript type : 
+
+      run -all
+
+- or if you want to see the result in terminal
+
+      make helloworld.vsimc
