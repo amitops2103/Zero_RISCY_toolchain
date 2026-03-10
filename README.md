@@ -241,9 +241,10 @@ The PULpino setup requires python2 >= 2.6
 
 Verify the installation :
 
-    ~/python2.7.18/bin/python2.7 --version
+    ~/python2/bin/python2.7 --version
 
-<img width="725" height="65" alt="image" src="https://github.com/user-attachments/assets/904144ff-1964-4811-b795-fe0cef9279a9" /> 
+<img width="769" height="51" alt="Screenshot 2026-03-10 160247" src="https://github.com/user-attachments/assets/a00cb06e-d18c-4734-b745-c9c808945d45" />
+ 
 
 ### 3. Python Virtual Enviroment Setup
 
@@ -402,7 +403,7 @@ write a testbench
 - compile the design and testbench 
 
       vlog and.v tb.v
-      vsim tb.v
+      vsim tb
 
 <img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/f3a8e7db-cc04-4c50-a65b-6627562d7bff" />
 
@@ -420,7 +421,7 @@ write a testbench
       cd 
       git clone https://github.com/pulp-platform/pulpino.git
       cd pulpino
-      git submodule update --init -recursive
+      git submodule update --init --recursive
       export PULP_CORE=zeroriscy
 
 - Install .yml
@@ -508,7 +509,7 @@ It will show this :
 manually copy the riscv.ld file from pulp-riscv-gnu-toolchain directory to pulpino->sw->build->CMakeFiles->CMakeTmp
 then inside build directory type :
 
-      riscv32-unknown-elf-ld –verbose | head -n -1 | tail -n +7 | sed ‘168 a\\_fbss = .;’ | sed ‘169 a \\ . = .;’ > /home/dev65/pulpino/build/CMakeFiles/CMakeTmp/riscv.ld
+      riscv32-unknown-elf-ld -verbose | head -n -1 | tail -n +7 | sed '168 a\\_fbss = .;' | sed '169 a \\ . = .;' > /home/dev65/pulpino/sw/build/CMakeFiles/CMakeTmp/riscv.ld
   
 - NOTE : It might get automatically deleted from the destination folder but you have to copy the folder again and again run the above command make sure that you have open the folders in the background like this :
 
@@ -528,7 +529,7 @@ then inside build directory type :
      
 - here u will get error related to -m32
 
-      find . -type f -exec sed -I ‘s/-m32//g’ {} +
+      find . -type f -exec sed -I 's/-m32//g' {} +
 
 also inside sw directory : vim CMakeLists.txt remove -m32 from line 54
 
