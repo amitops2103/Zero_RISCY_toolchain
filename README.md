@@ -251,27 +251,27 @@ Verify the installation :
 Install pip for Python2
 
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-    ~/python2.7.18/bin/python2.7 get-pip.py
+    ~/python2/bin/python2.7 get-pip.py
      
 If it shows error:    
 `ERROR: Could not find a version that satisfies the requirement wheel (from versions: none)`        
 `ERROR: No matching distribution found for wheel`
 
-    ~/python2.7.18/bin/python2.7 ~/Python-2.7.18/get-pip.py "pip<21.0" "setuptools<45" --no-cache-dir  
+    ~/python2/bin/python2.7 ~/Python-2.7.18/get-pip.py "pip<21.0" "setuptools<45" --no-cache-dir  
 
 verify 
 
-    ~/python2.7.18/bin/python2.7 -m pip --version
+    ~/python2/bin/python2.7 -m pip --version
 
 <img width="1352" height="487" alt="image" src="https://github.com/user-attachments/assets/2ee71041-758c-44e5-a855-329a53f3bc2c" />
 
 Install virtual enviroment using Python2
 
-    ~/python2.7.18/bin/python2.7 -m pip install virtualenv
+    ~/python2/bin/python2.7 -m pip install virtualenv
 
 Create virtual environment
 
-    ~/python2.7.18/bin/python2.7 -m virtualenv venv_pulp
+    ~/python2/bin/python2.7 -m virtualenv venv_pulp
 
 Activate it
 
