@@ -544,3 +544,29 @@ also inside sw directory : vim CMakeLists.txt remove -m32 from line 54
 - or if you want to see the result in terminal
 
       make helloworld.vsimc
+
+------------------------------------------------------------------------------------------------------------------------------
+
+# SPI Flash Simulation for PULPino `testSPIMaster`
+
+------------------------------------------------------------------------------------------------------------------------------
+
+This repository includes documentation and a Verilog model for running the PULPino
+`sw/apps/imperio_tests/testSPIMaster` test in RTL simulation with an attached SPI flash.
+
+| Document / File | Description |
+|-----------------|-------------|
+| [`docs/spi/spi_flash_model_guide.md`](docs/spi/spi_flash_model_guide.md) | Step-by-step guide: behavioral model vs custom responder, pin wiring, common pitfalls, transcript PASS/FAIL |
+| [`tb/spi_flash_responder.v`](tb/spi_flash_responder.v) | Minimal Verilog SPI flash model for simulation (JEDEC ID, read/write/erase, QPI enable) |
+
+### Quick summary
+
+1. **Behavioral model (recommended):** Use a vendor Verilog model for the Spansion S25FL128P — it
+   returns the correct JEDEC ID (`0x0102194D`) and supports QPI mode out of the box.
+2. **Custom responder:** Use the provided `tb/spi_flash_responder.v` when you need a
+   dependency-free model that covers exactly the commands used by `testSPIMaster`.
+3. **PASS/FAIL check:** The test prints `TEST PASS` / `TEST FAIL` to the transcript. Parse this
+   token in your regression script to get automated verification without waveform inspection.
+
+See [`docs/spi/spi_flash_model_guide.md`](docs/spi/spi_flash_model_guide.md) for full details
+including QPI pitfalls, dummy cycle matching, and the complete pin-wiring table.
